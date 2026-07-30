@@ -8,8 +8,8 @@ const configSchema = z.object({
   mcpTransport: z.enum(['stdio', 'sse']).default('stdio'),
   logLevel: z.enum(['debug', 'info', 'warn', 'error']).default('info'),
   intervals: z.object({
-    apiKey: z.string().optional().default(''),
-    athleteId: z.string().optional().default('me'),
+    apiKey: z.string().min(1, 'INTERVALS_API_KEY is required'),
+    athleteId: z.string().min(1, 'INTERVALS_ATHLETE_ID is required'),
     baseUrl: z.string().default('https://intervals.icu/api/v1'),
   }),
 });

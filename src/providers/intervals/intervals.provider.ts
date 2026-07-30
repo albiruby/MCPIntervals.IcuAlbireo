@@ -18,7 +18,7 @@ export class IntervalsProvider implements ProviderInterface {
 
   private readonly client: IntervalsClient;
 
-  constructor(apiKey: string, athleteId: string = 'me', baseUrl?: string) {
+  constructor(apiKey: string, athleteId: string, baseUrl?: string) {
     this.client = new IntervalsClient(apiKey, athleteId, baseUrl);
   }
 
