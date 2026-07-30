@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  tracklab-mcp:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MCP_TRANSPORT=sse
+      - INTERVALS_API_KEY=${INTERVALS_API_KEY}
+      - INTERVALS_ATHLETE_ID=${INTERVALS_ATHLETE_ID}
+    restart: unless-stopped

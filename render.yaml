@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tracklab-mcp
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: MCP_TRANSPORT
+        value: sse
+      - key: INTERVALS_API_KEY
+        sync: false
+      - key: INTERVALS_ATHLETE_ID
+        sync: false
